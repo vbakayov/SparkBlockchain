@@ -1,1 +1,0 @@
-# vbakayov.github.io

@@ -299,7 +299,7 @@ graph2.addEventListener("change", function() {
 
 
 
-                //Setting the new data to the graph
+                //Setting the data data to the graph
         chart.dataProvider = NewChartData;
         chart.validateData();
     });

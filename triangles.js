@@ -35,7 +35,7 @@ function load_trinagles_graph(inputFilePath) {
               "gridAboveGraphs": true,
               "startDuration": 1,
               "graphs": [ {
-                "balloonText": "[[category]]: <b>[[value]]</b>",
+                "balloonText": "Triangles Count: <b>[[value]]</b><br> Frequency: <b>[[category]]</b>",
                 "fillAlphas": 10.8,
                 "lineAlpha": 0.2,
                 "type": "column",
@@ -101,5 +101,7 @@ var graphsTrianglesCount = document.getElementById("tringlesCountSelector"); // 
         }
         else if (graphsTrianglesCount.value === "2012"){
               load_trinagles_graph("data/2012/triangles2012/data.csv");
+        } else if (graphsTrianglesCount.value === "2017"){
+              load_trinagles_graph("data/2017/triangles2017/triangles2017");
         }
     });

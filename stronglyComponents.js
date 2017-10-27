@@ -33,19 +33,19 @@ function load_strongly_connected_components(inputfilepath) {
               "gridAboveGraphs": true,
               "startDuration": 1,
               "graphs": [ {
-                "balloonText": "[[category]]: <b>[[value]]</b>",
+                "balloonText": "Count  <b>[[value]]</b> <br>Frequency: <b> [[category]]</b>",
                 "fillAlphas": 10.8,
                 "lineAlpha": 0.2,
                 "type": "column",
                   "fillColorsField": "color",
-                "valueField": "valueCount"
+                "valueField": "value"
               } ],
               "chartCursor": {
                 "categoryBalloonEnabled": false,
                 "cursorAlpha": 0,
                 "zoomable": true
               },
-              "categoryField": "nodeID",
+              "categoryField": "frequency",
               "categoryAxis": {
                   "labelsEnabled": true,
                 "gridPosition": "start",
@@ -62,7 +62,7 @@ function load_strongly_connected_components(inputfilepath) {
                     "bold": true,
                     "size": 20,
                     "y": 10
-                },{"text": "Node Id",
+                },{"text": "Frequency",
                     "x": "!20",
                     "y": "!17",
                     "width": "50%",
@@ -70,10 +70,10 @@ function load_strongly_connected_components(inputfilepath) {
                     "bold": true,
                     "align": "right"
                 }, {
-                  "text": "Count",
+                  "text": "Strongly Connected Components Count",
                     "rotation": 270,
                     "x": "5",
-                    "y": "230",
+                    "y": "100",
                     "width": "50%",
                     "size": 15,
                     "bold": true,
@@ -96,7 +96,7 @@ var graphsSCComponents = document.getElementById("stronglyCComponentsSelector");
             console.log("hereee");
             load_strongly_connected_components("data/2010/stronglyccomponents2009/data.csv");
         }else if (graphsSCComponents.value === "2011"){
-              load_strongly_connected_components("data/2011/stronglyccomponents2009/data.csv");
+              load_strongly_connected_components("data/2011/stronglyccomponents2011/data.csv");
         }
         else if (graphsSCComponents.value === "2012"){
               load_strongly_connected_components("data/2012/stronglyccomponents2012/data.csv");

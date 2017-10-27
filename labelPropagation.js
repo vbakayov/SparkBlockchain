@@ -28,6 +28,7 @@
              "theme": "light",
              "dataProvider": data,
              "valueAxes": [{
+                 "logarithmic": true,
                  "gridColor": "#FFFFFF",
                  "gridAlpha": 0.2,
                  "dashLength": 0
@@ -35,7 +36,7 @@
              "gridAboveGraphs": true,
              "startDuration": 1,
              "graphs": [{
-                 "balloonText": "[[category]]: <b>[[value]]</b>",
+                 "balloonText": "Label Propagation: <b>[[value]]</b><br>Frequency: <b>[[category]]</b>",
                  "fillAlphas": 10.8,
                  "lineAlpha": 0.2,
                  "type": "column",
@@ -106,5 +107,8 @@
         }
           else if (labelSelector.value === "2014"){
               load_graph_label_propagation("data/2014/lebelPropagation2014/new_l_sorted");
+        }
+        else if (labelSelector.value === "2017"){
+              load_graph_label_propagation("data/2017/labelPropagation2017/data.csv");
         }
     });

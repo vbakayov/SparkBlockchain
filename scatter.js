@@ -13,6 +13,11 @@ function load_scatter_graph(filePath) {
         var data = AmCharts.parseCSV(response, {
             "useColumnNames": true
         });
+         for(i=0; i< data.length;i++) {
+               data[i]["ax"] = Math.round(data[i]["ax"]* 100) / 100;
+
+
+            }
 
         var chart = AmCharts.makeChart("scatter", {
             "type": "xy",
@@ -42,7 +47,7 @@ function load_scatter_graph(filePath) {
             "marginTop": 50,
             "startDuration": 1,
             "graphs": [{
-                "balloonText": "x:[[x]] y:[[y]]",
+                "balloonText": "Page Rank:<b>[[x]]</b> <br> Triangles:<b>[[y]]</b>",
                 "bullet": "triangleUp",
                 "lineAlpha": 0,
                 "xField": "ax",
@@ -59,6 +64,7 @@ function load_scatter_graph(filePath) {
                 "position": "bottom-right"
             }
         });
+        
     });
 }
 
@@ -76,6 +82,9 @@ var graphScatterSelector = document.getElementById("scatterSelector"); // after 
         }
         else if (graphScatterSelector.value === "2012"){
               load_scatter_graph("data/2012/scatter2012/new");
+        }
+        else if (graphScatterSelector.value === "2017"){
+              load_scatter_graph("data/2017/scatter2017/scatter0217");
         }
     });
 

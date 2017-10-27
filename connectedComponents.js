@@ -25,6 +25,7 @@
              "theme": "light",
              "dataProvider": data,
              "valueAxes": [{
+               "logarithmic": true,
                  "gridColor": "#FFFFFF",
                  "gridAlpha": 0.2,
                  "dashLength": 0
@@ -32,19 +33,19 @@
              "gridAboveGraphs": true,
              "startDuration": 1,
              "graphs": [{
-                 "balloonText": "[[category]]: <b>[[value]]</b>",
+                 "balloonText": " Connected Components: <b>[[value]]</b> <br>Frequency: <b>[[category]]</b>",
                  "fillAlphas": 10.8,
                  "fillColorsField": "color",
                  "lineAlpha": 0.2,
                  "type": "column",
-                 "valueField": "valueCount"
+                 "valueField": "CCCount"
              }],
              "chartCursor": {
                  "categoryBalloonEnabled": false,
                  "cursorAlpha": 0,
                  "zoomable": true
              },
-             "categoryField": "nodeID",
+             "categoryField": "Frequency",
              "categoryAxis": {
                  "labelsEnabled": true,
                  "gridPosition": "start",
@@ -62,7 +63,7 @@
                  "size": 20,
                  "y": 10
              }, {
-                 "text": "Component Id",
+                 "text": "Frequency",
                  "x": "!20",
                  "y": "!17",
                  "width": "50%",
@@ -88,16 +89,19 @@
  load_graph_connected_componenets("data/2010/connectedComponents2009/data.csv");
 
 
-var graphs = document.getElementById("connectedComponentsSelector"); // after the DOM loads or use 'ready" function
-    graphs.addEventListener("change", function() {
-        if(graphs.value === "2010")
+var graphsCC = document.getElementById("connectedComponentsSelector"); // after the DOM loads or use 'ready" function
+    graphsCC.addEventListener("change", function() {
+        if(graphsCC.value === "2010")
         {
             console.log("hereee");
             load_graph_connected_componenets("data/2010/connectedComponents2009/data.csv");
-        }else if (graphs.value === "2011"){
+        }else if (graphsCC.value === "2011"){
               load_graph_connected_componenets("data/2011/connectedComponents2011/data.csv");
         }
-        else if (graphs.value === "2012"){
+        else if (graphsCC.value === "2012"){
               load_graph_connected_componenets("data/2012/connectedComponents2012/data.csv");
+        }
+           else if (graphsCC.value === "2017"){
+              load_graph_connected_componenets("data/2017/connectedComponents2017/data.csv");
         }
     });

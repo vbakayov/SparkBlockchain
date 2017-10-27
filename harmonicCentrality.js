@@ -34,6 +34,7 @@ function load_graph_harmonic(filename){
               "theme": "light",
               "dataProvider": data,
               "valueAxes": [ {
+                  "logarithmic": true,
                 "gridColor": "#FFFFFF",
                 "gridAlpha": 0.2,
                 "dashLength": 0
@@ -41,7 +42,7 @@ function load_graph_harmonic(filename){
               "gridAboveGraphs": true,
               "startDuration": 1,
               "graphs": [ {
-                "balloonText": "[[category]]: <b>[[value]]</b>",
+                "balloonText": "Centrality: <b>[[category]]</b>  <br>Frequency: <b>[[value]]</b>",
                   "fillColorsField": "color",
                 "fillAlphas": 10.8,
                 "lineAlpha": 0.2,
@@ -107,5 +108,8 @@ function load_graph_harmonic(filename){
         }
         else if (graphs.value === "2012"){
               load_graph_harmonic("data/2012/harmonicCentrality2012/data");
+        }
+         else if (graphs.value === "2017"){
+              load_graph_harmonic("data/2017/harmonicCentrality2017/data.csv");
         }
     });

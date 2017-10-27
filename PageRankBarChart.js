@@ -109,5 +109,7 @@ load_graph("data/2010/pageRank2009/data.csv");
         }
           else if (pageRankSelector.value === "2014"){
               load_graph("data/2014/pageRank2014/data.csv");
+        }   else if (pageRankSelector.value === "2017"){
+              load_graph("data/2017/pageRank2017/data.csv");
         }
     });
